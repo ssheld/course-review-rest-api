@@ -8,6 +8,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Author: Stephen Sheldon 4/14/2019
@@ -15,7 +17,9 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Course extends BaseEntity {
-
+  // Validation constraint - entity is not valid if it's null
+  @NotNull
+  @Size(min = 2, max = 140)
   private String title;
   private String url;
   @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
