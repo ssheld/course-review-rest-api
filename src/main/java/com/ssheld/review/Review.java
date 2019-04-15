@@ -2,9 +2,11 @@ package com.ssheld.review;
 
 import com.ssheld.core.BaseEntity;
 import com.ssheld.course.Course;
+import com.ssheld.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Author: Stephen Sheldon 4/14/2019
@@ -16,6 +18,9 @@ public class Review extends BaseEntity {
   private String description;
   @ManyToOne
   private Course course;
+  // Many to one - One user can have many reviews
+  @ManyToOne
+  private User reviewer;
 
   protected Review() {
     super();
@@ -25,6 +30,14 @@ public class Review extends BaseEntity {
     this();
     this.rating = rating;
     this.description = description;
+  }
+
+  public User getReviewer() {
+    return reviewer;
+  }
+
+  public void setReviewer(User reviewer) {
+    this.reviewer = reviewer;
   }
 
   public Course getCourse() {
