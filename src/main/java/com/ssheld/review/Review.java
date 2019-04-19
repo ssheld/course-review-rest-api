@@ -6,7 +6,6 @@ import com.ssheld.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 /**
  * Author: Stephen Sheldon 4/14/2019
