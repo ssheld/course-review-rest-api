@@ -31,7 +31,7 @@ public class User extends BaseEntity {
     super();
   }
 
-  public User(String firstName, String lastName, String username, String password,
+  public User(String username, String firstName, String lastName, String password,
               String[] roles) {
     // Call User default constructor
     this();
